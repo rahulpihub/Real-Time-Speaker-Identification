@@ -1,0 +1,6 @@
+streamlit
+numpy
+soundfile
+resemblyzer
+scikit-learn
+ffmpeg-python

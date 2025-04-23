@@ -108,7 +108,7 @@ if uploaded_file_user2:
 
 # ==== Upload Live Audio for Speaker Diarization ====
 if user1_embedding is not None and user2_embedding is not None:
-    st.markdown("### 🎧 Upload a live conversation audio")
+    st.markdown("### 🎧 Upload a recorded conversation audio")
     uploaded_live = st.file_uploader("Upload live audio (wav/mp3)", type=["wav", "mp3"])
 
     if uploaded_live:
@@ -118,7 +118,7 @@ if user1_embedding is not None and user2_embedding is not None:
 
         result = convert_to_wav(raw_path, LIVE_PATH)
         if isinstance(result, str):
-            st.success("🎙️ Live audio uploaded and converted.")
+            st.success("🎙️Audio uploaded and converted.")
             try:
                 diarization = identify_speakers_live(LIVE_PATH, [user1_embedding, user2_embedding])
                 st.write("🗣️ Speaker Diarization Result:")
